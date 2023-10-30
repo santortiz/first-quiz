@@ -26,8 +26,35 @@
 # formulas and their outputs in the test file, `question3_test.py`.
 
 # This function should return an oven instance!
+class Oven:
+
+  def __init__(self):
+    self.ingredients = []
+    self.actions = []
+
+  def add(self, item):
+    self.ingredients.append(item)
+  
+  def freeze(self):
+    self.actions.append("freeze")
+
+  def boil(self):
+    self.actions.append("boil")
+
+  def wait(self):
+    self.actions.append("wait")
+
+  def get_output(self):
+    if self.ingredients == ["lead", "mercury"] and self.actions == ["boil"]:
+      return "gold"
+    elif self.ingredients == ["water", "air"] and self.actions == ["freeze"]:
+      return "snow"
+    elif self.ingredients == ["cheese", "dough", "tomato"] and self.actions == ["boil"]:
+      return "pizza"
+    return None
+
 def make_oven():
-  None
+  return Oven()
 
 def alchemy_combine(oven, ingredients, temperature):
   
